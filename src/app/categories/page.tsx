@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import { categoriesServices } from "./services/categories.service"
 import { Category } from "./types/category.interface"
-import Link from "next/link"
 import CategoryCard from "./components/CategoryCard"
 
 const CategoriesPage = () => {
