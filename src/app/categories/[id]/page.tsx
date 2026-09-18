@@ -5,6 +5,7 @@ import { Category, DetailCategoryProps } from "../types/category.interface"
 import { getEventsByCategory } from "@/app/shared/services/events.service"
 import { Event } from "@/app/events/types/events.interface"
 import EventCard from "@/app/events/components/EventCard"
+import ButtonBack from "@/app/shared/components/ButtonBack"
 
 const DetailsCategoryPage = ({params}:DetailCategoryProps) => {
     const {id} = use(params)
@@ -30,7 +31,7 @@ const DetailsCategoryPage = ({params}:DetailCategoryProps) => {
     
   return (
     <div className="p-3">
-        <button onClick={()=>history.back()} className="cursor-pointer bg-blue-700 px-2 py-1 rounded">Volver</button>
+        <ButtonBack/>
         <h2>Nombre: {currentCategory?.name}</h2>
         <p>Descripción: {currentCategory?.description}</p>
 

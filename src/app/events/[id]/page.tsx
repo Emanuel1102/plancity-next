@@ -2,6 +2,7 @@
 import { use, useEffect, useState } from "react"
 import { Event, EventDetailsProps } from "../types/events.interface"
 import { eventsServices } from "../services/events.service"
+import ButtonBack from "@/app/shared/components/ButtonBack"
 
 const EventDetailsPage =  ({params}:EventDetailsProps) => {
     const {id} = use(params)
@@ -20,9 +21,13 @@ const EventDetailsPage =  ({params}:EventDetailsProps) => {
 
   return (
     <div className="p-2">
+      <ButtonBack/>
       <h2>Nombre del evento: {currentEvent?.name}</h2>
       <p>Descripción: {currentEvent?.description}</p>
-      <span>Pertenece a: {currentEvent?.category.name}</span>
+      <p>Capacidad: {currentEvent?.capacity}</p>
+      <p>Precio: {currentEvent?.price}</p>
+      <p>Ubicación: {currentEvent?.location}</p>
+      <span>Categoría: {currentEvent?.category.name}</span>
     </div>
   )
 }
